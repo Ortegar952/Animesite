@@ -16,6 +16,10 @@ body{
 .front-image img{
   height: 400px;
 }
+
+.container{
+    border: green solid 2px;
+}
 /* .anime-row{
     display: grid;
     grid-gap: 30px;
