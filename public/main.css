@@ -18,7 +18,15 @@ body{
 }
 
 .container{
-    border: green solid 2px;
+    display: hidden;
+}
+
+nav li {
+    padding: 10px 20px;
+    border: solid black 1px;
+    color: green;
+    list-style-type: none;
+    
 }
 /* .anime-row{
     display: grid;

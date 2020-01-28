@@ -63,7 +63,7 @@ app.use('/', require('./routes/index'))
 app.use('/users',require('./routes/users'));
 
 
-// app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
 
