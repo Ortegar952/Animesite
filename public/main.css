@@ -66,7 +66,6 @@ section h3{
   
   .container{
     position: relative;
-
     width: 100%;
     height: 100%;
     display: flex;
@@ -116,6 +115,30 @@ section h3{
     font-size:large;
     margin-left: 30px;
   }
+
+ 
+  .nav-wrapper,
+  .nav-wrapper a{
+      color: black;
+      background-color:aliceblue;
+  }
+
+  #anime-title{
+    max-width:280px;
+
+  }
+
+  .title-category{
+      color: white;
+      margin-left: 80px;
+      font-size: 30px;
+      font-weight: bold;
+  }
+
+  .nav-wrapper li{
+    margin-right: 40px;
+  }
+
 
 
   
