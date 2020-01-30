@@ -1,54 +1,24 @@
 body{
     padding: 0;
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inconsolata', monospace;
+    background-image: url('/background1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 
 }
 .front-image{
     display: block;
     text-align:center;
-    height:500px;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
 .front-image img{
-  height: 400px;
+    height: 450px;
 }
-
-.container{
-    display: hidden;
-}
-
-nav li {
-    padding: 10px 20px;
-    border: solid black 1px;
-    color: green;
-    list-style-type: none;
-    
-}
-/* .anime-row{
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(3,1fr);
-    border: solid red 1px;
-
-}
-
- .card{
-    max-width: 350px;
-    max-height: 750px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-} 
-
-.card-image img{
-    max-height: 400px;
-    max-width: 450px;
-    text-align: center;
-    border: solid yellow 1px;
-    
-} */
 
 .anime-row {
     display: flex;
@@ -59,7 +29,7 @@ nav li {
 }
 
 .anime-row > * {
-    flex-basis: 20rem;
+    flex-basis: 25rem;
     flex-shrink: 0;
 }
 
@@ -71,17 +41,84 @@ nav li {
 
 .anime-row .card > .card-content {
     flex-grow: 1;
+    height: 200px;
 }
 
 .anime-row .card > .card-image {
-    flex-basis: 25rem;
+    flex-basis: 30rem;
     flex-shrink: 0;
     overflow-y: hidden;
     background-color: whitesmoke;
+    justify-content: center;
+    flex: 1 1 auto; 
+
 }
 
+section h3{
+    text-align: justify;
+  }
+
+.input-field{
+    width: 30%;
+    margin: auto;  
+  }
+  
+  
+  .container{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input[type=text]{
+    position: relative;
+    padding: 15px 40px 15px 20px;
+    width: 20px;
+    color: #525252;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FFFFFF 0%,#464747 #F9F9F9 100%);
+    transition: width 0.4s ease;
+    outline: none;
+    
+    &:focus{ width: 300px; }
+  }
+  
+  i{
+    position: relative;
+    left: -37px;
+    color: #8233C5;
+  }  
+  
+  .container{
+    margin: auto;
+    width: 40%;
+  }
+
+  .btn{
+      background-color:orangered;
+  }
+
+  .card content p{
+      text-align: start;
+  }
+
+  .card-title{
+    color: red;
+    font-size:large;
+    margin-left: 30px;
+  }
 
 
+  
 @media screen and (max-width: 768px){
    
   

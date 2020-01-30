@@ -29,6 +29,22 @@ function searchAnime(event){
         .catch(err => console.warn('Fetch Error: ', err))
 }
 
+function topAnime(){
+    const base_url = "https://api.jikan.moe/v3/top/anime/1/upcoming";
+
+    fetch(base_url)
+        .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        // })
+        .then(updateDom)
+        .catch(err => console.warn('Fetch Error: ', err))
+}
+
+function updateTop(){
+    const browseBtn = document.getElementById('browse-btn');
+
+}
 function updateDom(data){
     const searchResults = document.getElementById('search_results');
     const animeByCategories = data.results
@@ -45,18 +61,32 @@ function updateDom(data){
         const animesHTML = animeByCategories[key]
         // .sort((a,b)=>a.episodes-b.episodes)
         .map(anime=>{
+            text_truncate = function(str, length, ending) {
+                if (length == null) {
+                  length = 100;
+                }
+                if (ending == null) {
+                  ending = '...';
+                }
+                if (str.length > length) {
+                  return str.substring(0, length - ending.length) + ending;
+                } else {
+                  return str;
+                }
+              };
+            let synopsis = text_truncate(anime.synopsis);
             return `
+            <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
-                    <img src="${anime.image_url}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title">${anime.title}</span>
-                    <p>${anime.synopsis}</p>
-                </div>
-                <div class="card-action">
-                    <a href="${anime.url}">Find out more</a>
-                </div>
+              <div class="card-image">
+                <img src=${anime.image_url}>
+              </div>
+              <h3 class="card-title">${anime.title}</h3>
+              <div class="card-content">
+                <p>${synopsis}</p>
+              </div>
+              <a  href=${anime.url} class="waves-effect waves-light btn" target="_blank">More Info</a>
+            </div>
             </div>
 
    
@@ -64,7 +94,7 @@ function updateDom(data){
         }).join(" ");
         return `
             <section>
-                <h3>${key.toUpperCase()}</h3>
+                <h3 class='title-category'>${key.toUpperCase()}</h3>
                 <div class="anime-row">${animesHTML}</div>
             </section>
         `
@@ -74,11 +104,6 @@ function updateDom(data){
        
 
 document.addEventListener("DOMContentLoaded", function(){
-    const container = document.getElementsByClassName('container');
-    console.log(container)
-   
- 
-
     const form = document.getElementById('search_form');
     form.addEventListener('submit',searchAnime)
 })

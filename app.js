@@ -7,7 +7,6 @@ const bodyParser     = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-
 const app     = express();
 
 //passport config
@@ -63,8 +62,9 @@ app.use('/', require('./routes/index'))
 app.use('/users',require('./routes/users'));
 
 
-app.set('views', __dirname + '/views');
+
 app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/views');
 
 
 

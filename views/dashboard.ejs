@@ -1,3 +1,97 @@
-<h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<style>
+    input.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+#profile-image1 {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+	border:2px solid orangeRed ;}
+	.tital{ font-size:16px; font-weight:500;}
+	.bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  color: white;
+}
+
+#home{
+    float: right;
+}
+
+.panel-heading h4{
+    color: orangeRed;
+}
+
+</style>
+
+
+
+
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Welcome, <%= name %> </h4><a href="/users/logout" class="btn btn-secondary">Logout</a>
+  <a href="/" class="btn btn-secondary" id='home'>Home</a>
+</div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        <div class="box-body">
+            <div class="col-sm-6">
+             <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+                
+            <input id="profile-image-upload" class="hidden" type="file">
+            <div style="color:#999;" >click here to change profile image</div>
+            <!--Upload Image Js And Css-->
+            </div>
+              <br>
+              <!-- /input-group -->
+            </div>
+            <div class="col-sm-6">
+            <h4 style="color:orangeRed;"><%= name %>  </h4></span>
+              <span><p>Bio</p></span>
+              <span><p> - Creative Front and Back End Developer</p></span>
+              <span><p> - Immersive Thinker and Tourist on The Web</p></span>                                                
+            </div>
+            <div class="clearfix"></div>
+            <hr style="margin:5px 0 5px 0;">
+    
+              
+<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 "><%= name %> </div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+<button type="button" class="btn btn-danger" >Browse Top Animes</button><br><br>
+
+<div class="form-group">
+    <label for="formGroupExampleInput2">Comments | Notes To This User</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Type Here..">
+</div>
+<div class="custom-file">
+    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+    <div class="invalid-feedback">Example invalid custom file feedback</div>
+</div>
+<small id="passwordHelpBlock" class="form-text text-muted">
+  Anime Recommendations | Discussions | Trends | Suggestions |
+</small>
+
+
+
+<script>
+    $(function() {
+        $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+        });
+    });       
+</script> 

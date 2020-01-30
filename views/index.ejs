@@ -3,34 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Anime Corner</title>
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <title>Anime Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/main.css" />
-    <link rel="icon" type="image/ico" href="logo.png"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="ninja.svg"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+
+
      
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <li><a href="#">Browse</a></li>
+      <nav>
+        <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+        <ul class="right hide-on-med-and-down">
+        <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/users/login">Member Login</a></li>
         <li><a href="/users/register">Register</a></li>
-        <form class="form-inline" id="search_form" >
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" for="search">Search</button>
-        </form>
+        </ul>
+        </div>
     </nav>
-        <div class="front-image">
-            <img src="/banner.png">
-        </div>  
+    <div class="front-image">
+         <img src="/banner.png">
+    </div> 
 
-
-     <div id='search_results' class="wrapper-items">
-
+    <form  id="search_form" >
+    <div class="container">
+        <input placeholder='Search...' class='js-search' type="text" name="search" id="search">
+        <i class="fa fa-search"></i>
     </div>
+    </form>
 
 
+
+    <div class="row" id='search_results'>
+
+     </div>
 
 <script type="text/javascript" src="/js/index.js"></script>
 </body>
